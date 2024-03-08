@@ -5,6 +5,7 @@
   $primaryColor: #6d25be
   $secondaryColor: rgb(100 161 244)
   $gradient: linear-gradient(135deg, $primaryColor 0%,$secondaryColor 100%)
+  $gradientTemp: linear-gradient(180deg, #ff0000 15%, #ffaa00 35%, #7777ff 75%, #0000ff 100%)
   font-family: "Oswald", sans-serif
   color: $textColor
 
@@ -132,16 +133,15 @@
         align-items: flex-end
         height: 300px
         .thermometer
-          background: $textColor
+          background: $gradientTemp
           height: 100%
           width: 20px
           border-radius: 10px
-          display: flex
-          flex-direction: column-reverse
           .line
-            height: 0%
+            height: 50%
             width: 100%
-            border-radius: 0 0 10px 10px
+            border-radius: 10px 10px 0 0
+            background: $textColor
 @media (max-width: 425px)
   main
     width: 75vw
