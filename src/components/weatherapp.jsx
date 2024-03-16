@@ -1,12 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch, faCog, faXmark } from '@fortawesome/free-solid-svg-icons'
+import { faSearch, faCog, faXmark, faTachometerAlt, faTint, faWind, faTemperatureHalf } from '@fortawesome/free-solid-svg-icons'
 import React, { useEffect, useState } from 'react'
 import Cookies from 'js-cookie';
 import languages from './languages';
 
 const Weatherapp = () => {
-    let api_key = "9d4761c1f4ddf1a245e715f546407ee3";
-    const [language, setLanguage] = useState(Cookies.get('language') || "pl");
+    let api_key = "api_key_here";
+    const [language, setLanguage] = useState(Cookies.get('language') || "en");
     const [background, setBackground] = useState(Cookies.get('background') || "dark");
     const [theme, setTheme] = useState(Cookies.get('theme') || "purple");
     const lang = languages[language];
@@ -44,7 +44,6 @@ const Weatherapp = () => {
         const line = document.getElementsByClassName("line")[0];
         line.style.height = `${(data.main.temp / 100) * -100 + 50}%`;
     }
-
     useEffect(() => {
         search();
     });
@@ -130,7 +129,7 @@ const Weatherapp = () => {
             </header>
             <div className="search">
                 <input type="text" className="searchBar" placeholder={lang.cityName} />
-                <button className={`${theme}Color`} onClick={() => { search(document.getElementsByClassName("searchBar")[0].value) }}>
+                <button type='submit' className={`${theme}Color`} onClick={() => { search(document.getElementsByClassName("searchBar")[0].value) }}>
                     <FontAwesomeIcon icon={faSearch} />
                 </button>
             </div>
@@ -138,19 +137,19 @@ const Weatherapp = () => {
                 <div className="left">
                     <p className="cityName"></p>
                     <div className="infoSet">
-                        <p>{lang.pressure}: </p>
+                        <p><FontAwesomeIcon icon={faTachometerAlt} className="iconStyle" /> {lang.pressure}: </p>
                         <p className="pressure"></p>
                     </div>
                     <div className="infoSet">
-                        <p>{lang.humidity}: </p>
+                        <p><FontAwesomeIcon icon={faTint} className="iconStyle" /> {lang.humidity}: </p>
                         <p className="humidity"></p>
                     </div>
                     <div className="infoSet">
-                        <p>{lang.wind}r: </p>
+                        <p><FontAwesomeIcon icon={faWind} className="iconStyle" /> {lang.wind}: </p>
                         <p className="wind"></p>
                     </div>
                     <div className="infoSet">
-                        <p>{lang.feelsLike}: </p>
+                        <p><FontAwesomeIcon icon={faTemperatureHalf} className="iconStyle" /> {lang.feelsLike}: </p>
                         <p className="feelsLike"></p>
                     </div>
                     <p className="temp"></p>
@@ -159,7 +158,9 @@ const Weatherapp = () => {
                 <div className="right">
                     <div className="thermometer">
                         <div className="line"></div>
+                        <div className="lineCurrent"></div>
                     </div>
+                    <div className="circle"></div>
                 </div>
             </div>
         </main>
