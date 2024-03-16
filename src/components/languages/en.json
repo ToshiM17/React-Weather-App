@@ -1,0 +1,17 @@
+{
+    "weather": "Weather",
+    "cityName": "Enter the city name...",
+    "pressure": "Pressure",
+    "humidity": "Humidity",
+    "wind": "Wind",
+    "feelsLike": "Feels like",
+
+    "settings": "Settings",
+    "language": "Language",
+    "polish": "Polish",
+    "english": "English",
+    "background": "Background",
+    "light": "Light",
+    "dark": "Dark",
+    "theme": "Theme: "
+  }

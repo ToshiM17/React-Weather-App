@@ -1,0 +1,17 @@
+{
+    "weather": "Pogoda",
+    "cityName": "Wpisz nazwe miasta...",
+    "pressure": "Ciśnienie",
+    "humidity": "Wilgotność",
+    "wind": "Wiatr",
+    "feelsLike": "Odczuwalna",
+
+    "settings": "Ustawienia",
+    "language": "Język",
+    "polish": "Polski",
+    "english": "Angielski",
+    "background": "Tło",
+    "light": "Jasne",
+    "dark": "Ciemne",
+    "theme": "Motyw: "
+  }
